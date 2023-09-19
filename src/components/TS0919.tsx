@@ -1,10 +1,11 @@
 import React from 'react';
+import Back from './Back';
 
-export const TS0919 = () => {
-	return (
-		<>
-			<h1>0919</h1>
-			<h2>객체 타입 다루기</h2>
-		</>
-	);
+const TS0919 = () => {
+	return <div>
+		<p>0919</p>
+		<h1></h1>
+	</div>;
 };
+
+export default TS0919;
