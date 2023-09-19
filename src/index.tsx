@@ -7,7 +7,8 @@ import TS0919 from './components/TS0919';
 import TS0920 from './components/TS0920';
 import TS0921 from './components/TS0921';
 import Main from './components/Main';
-import Back from './components/Back';
+import TS09192 from './components/TS09192';
+import TS09193 from './components/TS09193';
 const root = ReactDOM.createRoot(
 	document.getElementById('root') as HTMLElement,
 );
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
 			{
 				path: '0919',
 				element: <TS0919 />,
+				children: [
+					{ path: '2', element: <TS09192 /> },
+					{ path: '3', element: <TS09193 /> },
+				],
 			},
 			{
 				path: '0920',

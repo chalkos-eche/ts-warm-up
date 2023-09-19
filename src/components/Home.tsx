@@ -1,14 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Back = () => {
+const Home = () => {
 	return (
 		<div>
+			<hr />
 			<button>
-				<Link to="/">Back</Link>
+				<Link to="/">HOME</Link>
 			</button>
 		</div>
 	);
 };
 
-export default Back;
+export default Home;
