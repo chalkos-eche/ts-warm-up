@@ -10,6 +10,8 @@ import Main from './components/Main';
 import TS09192 from './components/TS09192';
 import TS09193 from './components/TS09193';
 import TS09202 from './components/TS09202';
+import TS0922 from './components/TS0922';
+import TS09222 from './components/TS09222';
 const root = ReactDOM.createRoot(
 	document.getElementById('root') as HTMLElement,
 );
@@ -38,6 +40,11 @@ const router = createBrowserRouter([
 			{
 				path: '0921',
 				element: <TS0921 />,
+			},
+			{
+				path: '0922',
+				element: <TS0922 />,
+				children: [{ path: '2', element: <TS09222 /> }],
 			},
 		],
 	},
