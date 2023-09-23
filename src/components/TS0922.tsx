@@ -13,7 +13,6 @@ const TS0922 = () => {
         }`}
 			</pre>
 			<p>보기처럼 간단하게 두가지 타입이 허용될경우 사용 가능</p>
-
 			<h2>유니온으로 타입 좁히기</h2>
 			<pre>{`function calculateTax(price: number|string, tax: number){
           return price * tax
@@ -38,8 +37,42 @@ const TS0922 = () => {
           return price * tax
         }
       }`}</pre>
-
 			<h2>유니온 타입과 배열 </h2>
+			<p>배열이 하나이상의 타입을 갖게 할 수 있다</p>
+			<pre>const stuff: (number | string) [] = [1, 2, 3];</pre>
+			<p>유니온으로 작성후 괄호로 처리해준다</p>
+			<pre>const stuff: number | string [] = [1, 2, 3];</pre> <span> X </span>
+			<pre>const stuff: ( number | string ) [] = [1, 2, 3];</pre>
+			<span> O </span>
+			<p>커스텀 타입을 이용한 유니온 타입 설정도 가능하다.</p>
+			<pre>{` type Loc = { 
+				lat: number;
+			long: number;
+		};
+		type Point = { 
+			x: number; 
+			y: number
+		};
+			const coords: (Point | Loc)[] = [
+				{ x: 23, y: 8 },
+				{ lat: 23, long: 8 },
+			]
+			`}</pre>
+			<h2>유니온타입의 리터럴 타입</h2>
+			<p>리터럴을 직접 작성하여 타입가드를 할 수 있다</p>
+			<p>예제;</p>
+			<pre>{`
+				type DayOfWeek = | 
+				"Monday" |
+				"Tuesday" |
+				"Wednesday" |
+				"Thursday" |
+				"Friday" |
+				"Saturday" |
+				"Sunday";
+
+				const today:DayOfWeek = "Monday"
+			`}</pre>
 			<br />
 			<Outlet />
 			{location.pathname === '/0922' && (
